@@ -45,6 +45,13 @@ body {
   background: white;
 }
 
+.about {
+  padding: 30px;
+  font-size: 20px;
+  text-align: left;
+  background: white;
+}
+
 /* Adds two columns*/
 .leftcolumn {
   float: left;
