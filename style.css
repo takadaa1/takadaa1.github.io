@@ -3,7 +3,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #07196a;
 }	
 
 li {
@@ -19,11 +19,11 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #020a30;
 }
 
 .active {
-  background-color: #4caf50;
+  background-color: #03b974;
 }
 
 * {
@@ -34,7 +34,7 @@ li a:hover:not(.active) {
 body {
   font-family: Arial;
   padding: 50px;
-  background: #f9ffce;
+  background: #c3edf5;
 }
 
 /* Header Title*/
