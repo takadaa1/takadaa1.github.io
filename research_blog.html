@@ -16,25 +16,25 @@
   </nav>
   <div class = "header">
     <h2>Blog: Protein Variant Library Design Research @ TCNJ</h2>
-    <h3>Akira Takada, Dr. Dimitris Papamichail</h3>
+    <h3>(Student) Akira Takada, (Professor) Dr. Dimitris Papamichail</h3>
   </div>
   <div class = "row">
     <div class = "leftcolumn">
       <div class = "card">
-        <h2>TITLE</h2>
-        <h5>DESCRIPTION, Sep 2, 2020</h5>
-        <p>...</p>
-      </div>
-      <div class = "card">
-        <h2>TITLE</h2>
-        <h5>DESCRIPTION, Sep 1, 2020</h5>
-        <p>...</p>
+        <h2>Week 1: Getting back into the Project</h2>
+        <h5>Sep 8, 2020</h5>
+        <p class = "tab">After my summer break I’m going back into researching the heuristics of an algorithm that finds the exact set of degenerate codons that can be used to most closely match the output ratio of amino acids. </p>
+	<p class = "tab">I re-examined the algorithm that was left for me that was developed by Tomer Aberbach that gives the ratio of a specific set of degenerate codons that output what closely matches the wanted ratios of amino acids. I need to figure out a way to find the <b>specific set of degenerate codons</b> that will give ratios that most closely match the ratios of amino acids with relatively low error. </p>
+	<p class = "tab">This algorithm solves the later step of the whole problem. It gives me the ratios for the degenerate codons that will result in them creating amino acids that match the requested ratio of amino acids. <b>I need to find the correct set of degenerate codons.</b></p>
+	<hr>
+	<p><b>Here is a simple rundown of what Tomer’s Algorithm does:</b></p>
+	<p class = "tab">Tomer Aberbach’s Algorithm: His program takes an amino acid set, the ratio for each acid, and the degenerate codon set that codes for the acid set and outputs the ratio for the degenerate codons. To solve the ratio, it uses linear algebra to solve the least squares of the equation Ax = B with  A<sup>T</sup>AX = A<sup>T</sup>B, where A is a matrix where each row is an amino acid the degenerate codon can create. Each column would be a degenerate codon. The matrix would contain ratios of the individual amino acids compared to the others <b>also</b> taking account of the coupling ratios for each base. Vector b would be the target ratio for each amino acid. Solving for x would give the ratio for the degenerate codons that most closely matches the wanted ratio.</p>
       </div>
     </div>
     <div class = "rightcolumn">
       <div class = "card">
-        <h2>TITLE</h2>
-	<p>...</p>
+	<h2><b>Problem</b></h2>
+	<p>Create an algorithm that finds the set of degenerate codons that code for a specific ratio of amino acids.</p>
       </div>
     </div>
   </div>

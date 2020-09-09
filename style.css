@@ -69,6 +69,7 @@ body {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  line-height: 2;
 }
 
 /* Clear floats after columns */
@@ -76,6 +77,11 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+/* Tab indent */
+.tab {
+	margin-left: 40px;
 }
 
 /* Responsive layout: columns stack for smaller screens */
