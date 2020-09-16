@@ -21,6 +21,23 @@
   <div class = "row">
     <div class = "leftcolumn">
       <div class = "card">
+	<h2>Week 2: Brute Force</h2>
+	<h5>Sep 16, 2020</h5>
+	<p class = "tab">Following up from the big goal I set in mind, <b>“I need to find the correct set of degenerate codons.”</b> I asked myself “If I were to find the set of <b>all</b> degenerate codons that code for a set of amino acids, how would I know which one to pick.” By using Tomer’s algorithm,  the percent error from each of the sets of degenerate codons can be used to find the set with the lowest error. That set with the lowest error would be the most suitable set of degenerate codons that code for the specific ratio of amino acids. While the issue with time is not affected by the number of degenerate codons, the process of finding all sets of degenerate codons can result in too much time loss.</p>
+	<br>
+	<p class = "tab">For now, I’m looking at defining each amino acid by degenerative codons that defines all of its different combinations ((Leu/L) Leucine, (Ser/S) Serine, (Arg/R) Arginine require two*) and finding the intersection between them. If there doesn’t exist at least two bases shared, I would take the union of them.</p>
+      	<p class = "tab">For example, for the three amino acids (Phe/F) Phenylalanine, (Leu/L) Leucine, and (Thr/T) Threonine, the degenerative codon definitions are as follows: (Please refer to the degenerative base table on the right)
+	<br><br>(Phe/F) Phenylalanine: TTT TTC -&gt; TTY
+	<br><br>(Leu/L) Leucine: TTA TTG CTT CTC CTA CTG -&gt; TTR CTN
+	<br><br>(Thr/T) Threonine: ACT ACC ACA ACG -&gt; ACN</p>
+	<br>
+	<p class = "tab">The only intersection that exists with at least two similar bases is between F and L producing TTN (the last base acting as a “wildcard” that defines whether it is F or L). T has no valid pairing with either F or L so I would take the union of T and the FL combination. This results in
+	<br><br>(TTY ∩ TTR) ∪ ACN -&gt; TTN ∪ ACN
+	<br><br>This can be broken down into other sets as well. For example:
+	<br><br>TTN ∪ ACN -&gt; any combination of (TTN/TTW/TTS/TTM/TTK) ∪ (ACN/ACB/ACD/ACH/ACV/ACK/ACM/ACR/ACS/ACW/ACY)
+	</p>
+      </div>
+      <div class = "card">
         <h2>Week 1: Getting back into the Project</h2>
         <h5>Sep 8, 2020</h5>
         <p class = "tab">After my summer break I’m going back into researching the heuristics of an algorithm that finds the exact set of degenerate codons that can be used to most closely match the output ratio of amino acids. </p>
