@@ -20,6 +20,16 @@
   </div>
   <div class = "row">
     <div class = "leftcolumn">
+      <div class = "card"> 
+        <h2>Week 5: C Programming</h2>
+	<h5>Oct 7, 2020</h5>
+	<p class = "tab">After my discussion with Dr. Papamichail, we concluded that our new goal was to find the set of degenerate codons with minimal cardinality that codes for a set of amino acids <b>best for a specific organism.</b> We looked into a possible solution of creating a list of all degenerate codons and only keeping the ones that code for a unique set of amino acids that have the highest score. For example, Glutamine (Q) is encoded by the codons CAA, CAG, and CAR. Since CAG has a higher score than both CAA and CAR for e.g homo sapiens, we would keep CAG for the best codon that codes for soley Glutamine. By creating a list of all codons/degenerate codons that code for amino acids+amino acids combinations, we can combine it with itself to create another list of the best 2 degenerative codons that code for certain sets of amino acids. I started to set up a base program that takes in codon frequencies in homo sapiens for now. With Dr. Papamichail’s tips, defining degenerative/normal bases with a 4 binary number and defining amino acids with a 12 binary number combinations (sets of 3-4 binary number combinations) calculation should be faster.</p> 
+      </div>
+      <div class = "card"> 
+      	<h2>Week 4: Frequency Scoring</h2>
+	<h5>Sep 30, 2020</h5>
+	<p class = "tab">I looked into myself how we could possibly create an algorithm that takes into account codon frequency depending on the organism and generate a set of degenerate codons with minimal cardinality that codes for a specified set of amino acids best for an organism. For this week I looked into prioritizing that score and throwing away codons that were scores lower than others for specific amino acids. (I later learned that instead of throwing away codons, I should just keep each unique set of amino acids with the highest scoring degenerate codon). Because the algorithm in CodonGenie assumes that the resulting degenerate codon will always be a single codon, I needed to modify this when thinking about multiple degenerate codons. For now, I looked solely taking in consideration of score and ignoring the size of the degenerate codon set.</p>
+      </div>
       <div class = "card">
         <h2>Week 3: CodonGenie</h2>
 	<h5>Sep 23, 2020</h5>
