@@ -17,9 +17,64 @@
   <div class = "header">
     <h2>Akira S. Takada</h2>
     <h3>髙田玲</h3>
-    <div class="box">
-      <img src="files/IMG_1494-PANO.jpg" alt="Dock" style="width:100%;height:100%;object-fit:cover;">
+
+    <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="files/IMG_1494-PANO.jpg" alt="Dock" style="width:100%;height:auto;object-fit:cover;">
+      <div class="container">
+        <p>Shinjuku Gyoen National Garden, Tokyo, Japan 2019</p>
+      </div>
     </div>
+
+    <div class="mySlides fade">
+      <img src="files/IMG_5597.jpg" alt="Dock" style="width:100%;height:auto;object-fit:cover;">
+      <div class="container">
+        <p>Ito Marine Town, Shizouka, Japan 2019</p>
+      </div>
+    </div>
+
+    <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
+    <a class="next" onclick="plusDivs(1)">&#10095;</a>
+
+    </div>
+
   </div>
+
+  <script>
+    var slideIndex = 1;
+    carousel();
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    } 
+  
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      } 
+      x[slideIndex-1].style.display = "block";
+    } 
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      } 
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1}
+      x[slideIndex-1].style.display = "block";
+      setTimeout(carousel, 9000);
+    }
+  </script>
+
+
+
 </body>
 </html>
