@@ -7,14 +7,16 @@
 </head>
 <body>
   <nav>	
-    <ul>
+    <ul class="nav">
       <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="research_blog.html">Research Blog</a></li>
+      <li><a class="active" href="research_blog_home.html">Research Blog</a></li>
       <li><a href="about.html">About/Contact</a></li>
       <li><a href="files/Takada-Akira-Resume.pdf" target="_blank" rel="noopener">Resume</a></li> 
     </ul>
   </nav>
   <div class = "header">
+    <a href="research_blog_home.html">Back to Research Blog Home</a>
+    <h2>FALL 2020</h2>
     <h2>Blog: Protein Variant Library Design Research @ TCNJ</h2>
     <h3>Akira Takada, Dr. Dimitris Papamichail</h3>
   </div>
@@ -92,6 +94,9 @@
 	<hr>
 	<p><b>Here is a simple rundown of what Tomer’s Algorithm does:</b></p>
 	<p class = "tab">Tomer Aberbach’s Algorithm: His program takes an amino acid set, the ratio for each acid, and the degenerate codon set that codes for the acid set and outputs the ratio for the degenerate codons. To solve the ratio, it uses linear algebra to solve the least squares of the equation Ax = B with  A<sup>T</sup>AX = A<sup>T</sup>B, where A is a matrix where each row is an amino acid the degenerate codon can create. Each column would be a degenerate codon. The matrix would contain ratios of the individual amino acids compared to the others <b>also</b> taking account of the coupling ratios for each base. Vector b would be the target ratio for each amino acid. Solving for x would give the ratio for the degenerate codons that most closely matches the wanted ratio.</p>
+      </div>
+      <div class = "card">
+        <a href = "#top">Top of Page</a>
       </div>
     </div>
     <div class = "rightcolumn">
