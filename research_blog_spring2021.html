@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+  <title>Akira's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>	
+      <ul class = "nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="research_blog_home.html">Research Blog</a></li>
+        <li><a href="about.html">About/Contact</a></li>
+        <li><a href="files/Takada-Akira-Resume.pdf" target="_blank" rel="noopener">Resume</a></li> 
+      </ul> 
+  </nav>
+  <div class = "header">
+    <a href="research_blog_home.html">Back to Research Blog Home</a>
+    <h2>SPRING 2021</h2>
+    <h2>Blog: Protein Variant Library Design Research @ TCNJ</h2>
+    <h3>Akira Takada, Dr. Dimitris Papamichail</h3>
+  </div>
+  <div class = "row">
+    <div class = "leftcolumn">
+      <div class = "card">
+        <h2>Weeks 1-5: Progress Report</h2>
+        <h5>Feb 10, 2021 - Mar 17, 2021</h5>
+        <p><b>Objective: </b>Create two new website applications: DecodonCalc3, and DecodonCalcSet.</p>
+        <p>Back into the research, I was tasked with creating two new website applications that are based off of the original decodoncalc2 website application on TCNJ’s server <a href="http://algo.tcnj.edu/decodoncalc2/" target="_blank" rel="noopener">DecodonCalc2</a></p>
+        <p><u>DecodonCalc3:</u></p>
+        <p class = "tab">This website application will add in the functionality of letting the user input ratios for each selected amino acid and submitting them. By doing so, the application will calculate the ratios of the degenerate codons needed to most closely match the given ratio of amino acids that will be synthesized from such degenerate codons. This takes into account for the preferable codons for each organism as well as the coupling ratios for each DNA base.</p>
+        <p><u>DecodonCalcSet:</u></p>
+        <p class = "tab">This website application will add in the functionality of showing the users the degenerate codon sequence, the amino acids that it will code for, and scoring for the maximum cardinality subset, as well as the minimal cardinality superset of the resulting degenerate codon sequence calculated. This will be calculated for amino acids that result in more than 1 degenerate codon sequence, and will return the subset and superset for degenerate codon sets for each n-1 degenerate codons. For example, a selection that results in 3 degenerate codons will show results for the subset and superset for 2 degenerate codons, and 1 as well.
+        </p>
+
+        <hr>
+
+        <p><b>Progress: </b>I’ve been switching between both website applications every week.</p>
+        <p><u>DecodonCalc3</u> <a href="http://algo.tcnj.edu/decodoncalc3/" target="_blank" rel="noopener">LINK</a></p>
+        <p class = "tab">I was able to integrate dynamic text fields in javascript so that the number of ratio input fields created match the number of amino acids selected by the user. Resetting or not selecting any amino acids will also clear any input text fields. A calculate button is also created to calculate the ratios of degenerate codons for the desired ratios of the amino acids, as well as a validation function to check for valid inputs and ratios that total to 100%. Now I need to integrate a java program that inputs the degenerate codon set and user inputted ratios to calculate the resulting ratios.</p>
+        <p><u>DecodonCalcSet</u> <a href="http://algo.tcnj.edu/decodoncalcset/" target="_blank" rel="noopener">LINK</a></p>
+        <p class = "tab">I needed to create a new database specifically for this website application. Similar to the original database, each organism table still includes the count of degen codons, binary code for amino acids, and degen codon subset(s). However, now we included two extra attributes, the maximum cardinality subset and minimal cardinality superset. We are also planning on adding score attributes that refer to the codons preferable for specific organisms. After creating the database, now I need to figure out how I could recursively query the two resulting bicodes (subset and superset) to find the matching bicode and further querying the subsets of subsets and supersets of supersets.</p>
+      </div>
+
+      <div class = "card">
+        <a href = "#top">Top of Page</a>
+      </div>
+    </div>
+    <div class = "rightcolumn">
+      <div class = "card">
+	      <h2><b>Problem</b></h2>
+	      <p>Create an algorithm that finds the set of degenerate codons that code for a specific ratio of amino acids.</p>
+	      <img src="files/table.png" alt="Degen Codon table">
+      </div>
+      <div class = "card">
+        <h2><b>Coupling Ratios</b></h2>
+        <ul class = "list">
+          <li>A: 3.0</li>
+          <li>T: 2.4</li>
+          <li>G: 2.0</li>
+          <li>C: 3.0</li>
+        </ul>
+      </div>
+      <div class = "card">
+        <h2><b>Resources</b></h2>
+        <p><a href="files/Instructions.pdf" target="_blank" rel="noopener">Instructions on Adding Organisms to Database</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

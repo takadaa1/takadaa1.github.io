@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+  <title>Akira's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>	
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="research_blog_home.html">Research Blog</a></li>
+      <li><a href="about.html">About/Contact</a></li>
+      <li><a href="files/Takada-Akira-Resume.pdf" target="_blank" rel="noopener">Resume</a></li> 
+    </ul>
+  </nav>
+  <div class = "header">
+    <a href="research_blog_home.html">Back to Research Blog Home</a>
+    <h2>FALL 2020</h2>
+    <h2>Blog: Protein Variant Library Design Research @ TCNJ</h2>
+    <h3>Akira Takada, Dr. Dimitris Papamichail</h3>
+  </div>
+  <div class = "row">
+    <div class = "leftcolumn">
+      <div class = "card">
+        <h2>Week 10: Dynamic Database Query</h2>
+        <h5>Nov 11, 2020</h5>
+        <p class = "tab">I was able to successfully implement a variable for the table that is queried in the php file. After a user selects a specific organism from the dropdown, that organism request is sent to the php file and queries a table with the user selected organism.</p>
+        <p class = "tab">The website now successfully takes in user selected amino acids to send as a bicode, along with the selected organism and queries the correct table.</p>
+        <p class = "tab">The process of creating a new table for an organism and creating a new option in the website application is done through steps shown in <a href="files/Instructions.pdf" target="_blank" rel="noopener">this</a> pdf.</p>
+      </div>
+      <div class = "card">
+        <h2>Week 9: Javascript and Php</h2>
+        <h5>Nov 4, 2020</h5>
+        <p class = "tab">After finally gaining access to the algo tcnj MySql database, I was able to create my very own database for the web application. I was also able to successfully convert the data files provided to me by Dr. Papamichail into tables like I mentioned last week. All I needed to do was add a row in the text file that defines the columns and save it as a csv file.</p>
+        <p class = "tab">I then looked into the javascript and php of the website and came to understand the complexity. I was able to add a drop-down menu to the website with a few species that I added myself. I’m still trying to figure out how to modify the php file so that it pulls data from a table that is specified by the user input, instead of querying from the same table.</p>
+      </div>
+      <div class = "card">
+        <h2>Week 8: No Access</h2>
+        <h5>Oct 28, 2020</h5>
+        <p class = "tab">Dr. Papamichail was able to create a copy of the decodon website for me to play around with. I focused this week on playing around with databases and getting a hang of them. Unfortunately, I did not have a MySql account on the algo tcnj database server which restricted me from creating and modifying any databases. Looking more into the creation of databases, I found out that I could easily convert csv files into populated databases: <a href = "https://medium.com/@AviGoom/how-to-import-a-csv-file-into-a-mysql-database-ef8860878a68">Convert csv files into MySql database</a>. By understanding how to do this, I was confident that I could easily convert the datafiles Dr. Papamichail provides me with MySql tables that I can use for the website application.</p>
+      </div>
+      <div class = "card">
+        <h2>Week 7: MySql Database</h2>
+        <h5>Oct 21, 2020</h5>
+        <p class = "tab">Looking further into the php file that was called by the javascript in the decodon website, I was able to look more into the database that was used. After gaining access to the algo tcnj server, I looked into the mysql database. The table in the database was constructed with three columns; count, bicode and subset. The count column defined how many degenerate codons existed in the subset. The bicode column consisted of a set of 20 binary digits that defined whether or not the subset codes for the 20 amino acids. The subset column consisted of the actual degenerate codon subset(s).</p>
+      </div>
+      <div class = "card">
+        <h2>Week 6: Website Application</h2>
+        <h5>Oct 14, 2020</h5>
+        <p class = "tab">I was able to get in touch with Tomer Aberbach about gaining access to the repository for the decodon calculator website so that I can model a similar one for my problem I’m researching. The website <a href = "http://algo.tcnj.edu/decodoncalc/">Optimal Degenerate Codon Design for Amino Acid Sets</a> calculates the minimum number of degenerate codons needed to code for a set of amino acids and also gives a single example. My new task is creating a web application similar to this that instead adds the option of selecting a species and outputting the most optimal set of degenerate codons for the specific species. Looking through the repository, it would seem that I need to learn javascript and php with mysql.</p>
+      </div>
+      <div class = "card"> 
+        <h2>Week 5: C Programming</h2>
+	<h5>Oct 7, 2020</h5>
+	<p class = "tab">After my discussion with Dr. Papamichail, we concluded that our new goal was to find the set of degenerate codons with minimal cardinality that codes for a set of amino acids <b>best for a specific organism.</b> We looked into a possible solution of creating a list of all degenerate codons and only keeping the ones that code for a unique set of amino acids that have the highest score. For example, Glutamine (Q) is encoded by the codons CAA, CAG, and CAR. Since CAG has a higher score than both CAA and CAR for e.g homo sapiens, we would keep CAG for the best codon that codes for soley Glutamine. By creating a list of all codons/degenerate codons that code for amino acids+amino acids combinations, we can combine it with itself to create another list of the best 2 degenerative codons that code for certain sets of amino acids. I started to set up a base program that takes in codon frequencies in homo sapiens for now. With Dr. Papamichail’s tips, defining degenerative/normal bases with a 4 binary number and defining amino acids with a 12 binary number combinations (sets of 3-4 binary number combinations) calculation should be faster.</p> 
+      </div>
+      <div class = "card"> 
+      	<h2>Week 4: Frequency Scoring</h2>
+	<h5>Sep 30, 2020</h5>
+	<p class = "tab">I looked into myself how we could possibly create an algorithm that takes into account codon frequency depending on the organism and generate a set of degenerate codons with minimal cardinality that codes for a specified set of amino acids best for an organism. For this week I looked into prioritizing that score and throwing away codons that were scores lower than others for specific amino acids. (I later learned that instead of throwing away codons, I should just keep each unique set of amino acids with the highest scoring degenerate codon). Because the algorithm in CodonGenie assumes that the resulting degenerate codon will always be a single codon, I needed to modify this when thinking about multiple degenerate codons. For now, I looked solely taking in consideration of score and ignoring the size of the degenerate codon set.</p>
+      </div>
+      <div class = "card">
+        <h2>Week 3: CodonGenie</h2>
+	<h5>Sep 23, 2020</h5>
+	<p class = "tab">I was tasked this week to look into the scoring algorithm that CodonGenie uses to evaluate the set of degenerate codons and how well it matches with a specified organism. CodonGenie is an existing application that finds all <b>single</b> degenerate codons that code for a set of amino acids and scores them by compatibility with a specified organism. However, my research needs to include sets of degenerate codons, not only single ones to code for amino acids. By looking into the way CodonGenie scores, I might be able to use this for my problem.</p>
+	<p class = "tab">CodonGenie’s Scoring Algorithm:
+	<br>The algorithm is explained in the following article: <a href="https://peerj.com/articles/cs-120/">https://peerj.com/articles/cs-120/</a>
+	<br>To sum it up, the algorithm takes into account the frequency of codons that exist in a specific organism and uses those values to find the average, which equates to the score.</p>
+      </div>
+      <div class = "card">
+	<h2>Week 2: Brute Force</h2>
+	<h5>Sep 16, 2020</h5>
+	<p class = "tab">Following up from the big goal I set in mind, <b>“I need to find the correct set of degenerate codons.”</b> I asked myself “If I were to find the set of <b>all</b> degenerate codons that code for a set of amino acids, how would I know which one to pick.” By using Tomer’s algorithm,  the percent error from each of the sets of degenerate codons can be used to find the set with the lowest error. That set with the lowest error would be the most suitable set of degenerate codons that code for the specific ratio of amino acids. While the issue with time is not affected by the number of degenerate codons, the process of finding all sets of degenerate codons can result in too much time loss.</p>
+	<br>
+	<p class = "tab">For now, I’m looking at defining each amino acid by degenerative codons that defines all of its different combinations ((Leu/L) Leucine, (Ser/S) Serine, (Arg/R) Arginine require two*) and finding the intersection between them. If there doesn’t exist at least two bases shared, I would take the union of them.</p>
+      	<p class = "tab">For example, for the three amino acids (Phe/F) Phenylalanine, (Leu/L) Leucine, and (Thr/T) Threonine, the degenerative codon definitions are as follows: (Please refer to the degenerative base table on the right)
+	<br><br>(Phe/F) Phenylalanine: TTT TTC -&gt; TTY
+	<br><br>(Leu/L) Leucine: TTA TTG CTT CTC CTA CTG -&gt; TTR CTN
+	<br><br>(Thr/T) Threonine: ACT ACC ACA ACG -&gt; ACN</p>
+	<br>
+	<p class = "tab">The only intersection that exists with at least two similar bases is between F and L producing TTN (the last base acting as a “wildcard” that defines whether it is F or L). T has no valid pairing with either F or L so I would take the union of T and the FL combination. This results in
+	<br><br>(TTY ∩ TTR) ∪ ACN -&gt; TTN ∪ ACN
+	<br><br>This can be broken down into other sets as well. For example:
+	<br><br>TTN ∪ ACN -&gt; any combination of (TTN/TTW/TTS/TTM/TTK) ∪ (ACN/ACB/ACD/ACH/ACV/ACK/ACM/ACR/ACS/ACW/ACY)
+	</p>
+      </div>
+      <div class = "card">
+        <h2>Week 1: Getting back into the Project</h2>
+        <h5>Sep 8, 2020</h5>
+        <p class = "tab">After my summer break I’m going back into researching the heuristics of an algorithm that finds the exact set of degenerate codons that can be used to most closely match the output ratio of amino acids. </p>
+	<p class = "tab">I re-examined the algorithm that was left for me that was developed by Tomer Aberbach that gives the ratio of a specific set of degenerate codons that output what closely matches the wanted ratios of amino acids. I need to figure out a way to find the <b>specific set of degenerate codons</b> that will give ratios that most closely match the ratios of amino acids with relatively low error. </p>
+	<p class = "tab">This algorithm solves the later step of the whole problem. It gives me the ratios for the degenerate codons that will result in them creating amino acids that match the requested ratio of amino acids. <b>I need to find the correct set of degenerate codons.</b></p>
+	<hr>
+	<p><b>Here is a simple rundown of what Tomer’s Algorithm does:</b></p>
+	<p class = "tab">Tomer Aberbach’s Algorithm: His program takes an amino acid set, the ratio for each acid, and the degenerate codon set that codes for the acid set and outputs the ratio for the degenerate codons. To solve the ratio, it uses linear algebra to solve the least squares of the equation Ax = B with  A<sup>T</sup>AX = A<sup>T</sup>B, where A is a matrix where each row is an amino acid the degenerate codon can create. Each column would be a degenerate codon. The matrix would contain ratios of the individual amino acids compared to the others <b>also</b> taking account of the coupling ratios for each base. Vector b would be the target ratio for each amino acid. Solving for x would give the ratio for the degenerate codons that most closely matches the wanted ratio.</p>
+      </div>
+      <div class = "card">
+        <a href = "#top">Top of Page</a>
+      </div>
+    </div>
+    <div class = "rightcolumn">
+      <div class = "card">
+	<h2><b>Problem</b></h2>
+	<p>Create an algorithm that finds the set of degenerate codons that code for a specific ratio of amino acids.</p>
+	<img src="files/table.png" alt="Degen Codon table">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
